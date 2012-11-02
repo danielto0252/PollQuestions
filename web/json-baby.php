@@ -1,19 +1,20 @@
 <?php
 
-$host 		= "172.16.94.130";
-$username 	= "root";
-$password 	= "root";
+$host = 'localhost';
+$username = 'root';
+$password = 'root';
+$db = 'clickr';
 
 $con = mysql_connect($host, $username, $password);
 if (!$con)
 	die('Could not connect: ' . mysql_error());
-mysql_select_db("clickr", $con);
+//echo 'Connected Successfully';
 
-$q = mysql_query("SELECT * FROM FRquestions");
-while ($e=mysql_fetch_assoc($q)) 
-	$output[] = $e;
+mysql_select_db($db);
+$result = mysql_query("SELECT * FROM FRquestions");
 
+while($row = mysql_fetch_array($result))
+	$output[] = $row;
 print(json_encode($output));
-
 mysql_close($con);
 ?>

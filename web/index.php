@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<h2>Create a question!!</h2>
-		<form action="thankyou.php" method="post">
+		<form action="/480-project/thankyou.php" method="post">
 			<textarea rows="5" cols="50" maxlength="255" autofocus="autofocus" onKeyPress="return charLimit(this)" onKeyUp="return characterCount(this)" name="question"></textarea>
 			<p>Characters remain: <strong><span id="charCount">255</span></strong></p>
 			<br>
