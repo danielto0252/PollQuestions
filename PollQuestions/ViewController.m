@@ -67,11 +67,9 @@
 
 - (IBAction)submitResponse:(id)sender
 {
-    NSLog(@"%@", self.questionId);
     NSString *userResponse = self.response.text;
     NSString *questionId = self.questionId;
-    NSLog(@"%@, %@", userResponse, questionId);
-    //[self.brain sendResponse:userResponse withQuestionId:questionId];
+    [self.brain sendResponse:userResponse withQuestionId:questionId];
 }
 
 

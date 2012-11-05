@@ -26,13 +26,24 @@
 - (void)sendResponse:(NSString *)response withQuestionId:(NSString *)questionId
 {
     //must send the response as a post to a url that will then update the response field in the database
-    
     NSString *postURL = @"";
-    NSMutableURLRequest *postResponse = [NSMutableURLRequest requestWithURL:postURL];
-    [postResponse setHTTPMethod:@"POST"];
-    [postResponse setHTTPBody:[response dataUsingEncoding:NSUTF8StringEncoding]];
-    [postResponse setHTTPBody:[questionId dataUsingEncoding:NSUTF8StringEncoding]];
     
+    NSDictionary *responseDict = [NSDictionary dictionaryWithObjectsAndKeys:response, @"response",
+                                  questionId, @"questionId", nil];
+    NSError *err;
+    NSData *responseJSONData = [NSJSONSerialization dataWithJSONObject:responseDict options:0 error:&err];
+    
+    NSString *result = [[NSString alloc] initWithData:responseJSONData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@", result);
+    
+    /*
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:postURL];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+    [postRequest setHTTPBody:[response dataUsingEncoding:NSUTF8StringEncoding]];
+    [postRequest setHTTPBody:[questionId dataUsingEncoding:NSUTF8StringEncoding]];
+    NSError *err;*/
     
 }
 
