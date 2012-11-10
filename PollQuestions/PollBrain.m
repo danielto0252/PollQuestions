@@ -26,7 +26,7 @@
 - (void)sendResponse:(NSString *)response withQuestionId:(NSString *)questionId
 {
     //must send the response as a post to a url that will then update the response field in the database
-    NSString *postURL = @"";
+    NSString *postURL = @"http://172.16.94.130/480-project/add-response.php";
     
     NSDictionary *responseDict = [NSDictionary dictionaryWithObjectsAndKeys:response, @"response",
                                   questionId, @"questionId", nil];
@@ -37,14 +37,13 @@
     
     NSLog(@"%@", result);
     
-    /*
-    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:postURL];
+    NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:postURL]];
     [postRequest setHTTPMethod:@"POST"];
     [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
-    [postRequest setHTTPBody:[response dataUsingEncoding:NSUTF8StringEncoding]];
-    [postRequest setHTTPBody:[questionId dataUsingEncoding:NSUTF8StringEncoding]];
-    NSError *err;*/
-    
+    [postRequest setHTTPBody:responseJSONData];
+
+    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
+    [connection start];
 }
 
 @end 
