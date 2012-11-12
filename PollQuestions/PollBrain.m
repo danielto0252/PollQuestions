@@ -43,7 +43,30 @@
     [postRequest setHTTPBody:responseJSONData];
 
     NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
+
     [connection start];
+}
+
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSLog(@"Data Sent: %@", data);
+}
+
+/*
+ if there is an error occured, this method will be called by connection
+ */
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{    
+    NSLog(@"Error: %@" , error);
+}
+
+/*
+ if data is successfully received, this method will be called by connection
+ */
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"Data Received!");
 }
 
 @end 
