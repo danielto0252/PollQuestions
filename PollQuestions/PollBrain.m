@@ -7,6 +7,9 @@
 //
 
 #import "PollBrain.h"
+#import "Hasher.h"
+#import "AESCrypt.h"
+
 
 @implementation PollBrain
 
@@ -28,14 +31,27 @@
     //must send the response as a post to a url that will then update the response field in the database
     NSString *postURL = @"http://172.16.94.130/480-project/add-response.php";
     
+    //Use the hasher model to hash the response and questionId
+    NSString *hashResponse = [Hasher createSHA256HashFrom:response];
+    NSString *hashQuestionId = [Hasher createSHA256HashFrom:questionId];
+    NSLog(@"Hashed response: %@, Hashed questionId: %@", hashResponse, hashQuestionId);
+    
+    //trying to encrypt the same things
+    NSString *encryptResponse = [AESCrypt encrypt:response password:@"chicken butt"];
+    NSString *encryptQuesitonId = [AESCrypt encrypt:questionId password:@"chicken butt"];
+    NSLog(@"Encrypted Response: %@", encryptResponse);
+    NSLog(@"Decrypted Response: %@", [AESCrypt decrypt:encryptResponse password:@"chicken butt"]);
+    
     NSDictionary *responseDict = [NSDictionary dictionaryWithObjectsAndKeys:response, @"response",
                                   questionId, @"questionId", nil];
     NSError *err;
     NSData *responseJSONData = [NSJSONSerialization dataWithJSONObject:responseDict options:0 error:&err];
     
+    
     NSString *result = [[NSString alloc] initWithData:responseJSONData encoding:NSUTF8StringEncoding];
     
     NSLog(@"%@", result);
+    NSLog(@"%@", responseJSONData);
     
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:postURL]];
     [postRequest setHTTPMethod:@"POST"];
@@ -46,7 +62,6 @@
 
     [connection start];
 }
-
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
