@@ -24,6 +24,14 @@
 		D13CA03A162C93AE00A0FF0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D13CA038162C93AE00A0FF0E /* InfoPlist.strings */; };
 		D13CA03D162C93AE00A0FF0E /* PollQuestionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D13CA03C162C93AE00A0FF0E /* PollQuestionsTests.m */; };
 		D16E18CB164775AE009E019D /* PollBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = D16E18CA164775AE009E019D /* PollBrain.m */; };
+		D1FD2CC51650D0BC00020BCB /* Hasher.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FD2CC41650D0BC00020BCB /* Hasher.m */; };
+		D1FD2CD21650D73300020BCB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D1FD2CC71650D73300020BCB /* .gitignore */; };
+		D1FD2CD31650D73300020BCB /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FD2CC91650D73300020BCB /* AESCrypt.m */; };
+		D1FD2CD41650D73300020BCB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D1FD2CCA1650D73300020BCB /* LICENSE */; };
+		D1FD2CD51650D73300020BCB /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FD2CCC1650D73300020BCB /* NSData+Base64.m */; };
+		D1FD2CD61650D73300020BCB /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FD2CCE1650D73300020BCB /* NSData+CommonCrypto.m */; };
+		D1FD2CD71650D73300020BCB /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FD2CD01650D73300020BCB /* NSString+Base64.m */; };
+		D1FD2CD81650D73300020BCB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D1FD2CD11650D73300020BCB /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +41,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = D13CA006162C93AE00A0FF0E;
 			remoteInfo = PollQuestions;
+		};
+		D1FD2CD91650D7BF00020BCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D13C9FFE162C93AE00A0FF0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D13CA02D162C93AE00A0FF0E;
+			remoteInfo = PollQuestionsTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -61,6 +76,19 @@
 		D13CA03C162C93AE00A0FF0E /* PollQuestionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PollQuestionsTests.m; sourceTree = "<group>"; };
 		D16E18C9164775AE009E019D /* PollBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollBrain.h; sourceTree = "<group>"; };
 		D16E18CA164775AE009E019D /* PollBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollBrain.m; sourceTree = "<group>"; };
+		D1FD2CC31650D0BC00020BCB /* Hasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hasher.h; sourceTree = "<group>"; };
+		D1FD2CC41650D0BC00020BCB /* Hasher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hasher.m; sourceTree = "<group>"; };
+		D1FD2CC71650D73300020BCB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D1FD2CC81650D73300020BCB /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
+		D1FD2CC91650D73300020BCB /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
+		D1FD2CCA1650D73300020BCB /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D1FD2CCB1650D73300020BCB /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		D1FD2CCC1650D73300020BCB /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		D1FD2CCD1650D73300020BCB /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		D1FD2CCE1650D73300020BCB /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		D1FD2CCF1650D73300020BCB /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		D1FD2CD01650D73300020BCB /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		D1FD2CD11650D73300020BCB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +148,7 @@
 		D13CA011162C93AE00A0FF0E /* PollQuestions */ = {
 			isa = PBXGroup;
 			children = (
+				D1FD2CC61650D73300020BCB /* AESCrypt-ObjC-master */,
 				D13CA01A162C93AE00A0FF0E /* AppDelegate.h */,
 				D13CA01B162C93AE00A0FF0E /* AppDelegate.m */,
 				D13CA023162C93AE00A0FF0E /* MainStoryboard.storyboard */,
@@ -128,6 +157,8 @@
 				D16E18C9164775AE009E019D /* PollBrain.h */,
 				D16E18CA164775AE009E019D /* PollBrain.m */,
 				D13CA012162C93AE00A0FF0E /* Supporting Files */,
+				D1FD2CC31650D0BC00020BCB /* Hasher.h */,
+				D1FD2CC41650D0BC00020BCB /* Hasher.m */,
 			);
 			path = PollQuestions;
 			sourceTree = "<group>";
@@ -165,6 +196,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D1FD2CC61650D73300020BCB /* AESCrypt-ObjC-master */ = {
+			isa = PBXGroup;
+			children = (
+				D1FD2CC71650D73300020BCB /* .gitignore */,
+				D1FD2CC81650D73300020BCB /* AESCrypt.h */,
+				D1FD2CC91650D73300020BCB /* AESCrypt.m */,
+				D1FD2CCA1650D73300020BCB /* LICENSE */,
+				D1FD2CCB1650D73300020BCB /* NSData+Base64.h */,
+				D1FD2CCC1650D73300020BCB /* NSData+Base64.m */,
+				D1FD2CCD1650D73300020BCB /* NSData+CommonCrypto.h */,
+				D1FD2CCE1650D73300020BCB /* NSData+CommonCrypto.m */,
+				D1FD2CCF1650D73300020BCB /* NSString+Base64.h */,
+				D1FD2CD01650D73300020BCB /* NSString+Base64.m */,
+				D1FD2CD11650D73300020BCB /* README.md */,
+			);
+			path = "AESCrypt-ObjC-master";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,6 +228,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D1FD2CDA1650D7BF00020BCB /* PBXTargetDependency */,
 			);
 			name = PollQuestions;
 			productName = PollQuestions;
@@ -241,6 +291,9 @@
 				D13CA020162C93AE00A0FF0E /* Default@2x.png in Resources */,
 				D13CA022162C93AE00A0FF0E /* Default-568h@2x.png in Resources */,
 				D13CA025162C93AE00A0FF0E /* MainStoryboard.storyboard in Resources */,
+				D1FD2CD21650D73300020BCB /* .gitignore in Resources */,
+				D1FD2CD41650D73300020BCB /* LICENSE in Resources */,
+				D1FD2CD81650D73300020BCB /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +332,11 @@
 				D13CA01C162C93AE00A0FF0E /* AppDelegate.m in Sources */,
 				D13CA028162C93AE00A0FF0E /* ViewController.m in Sources */,
 				D16E18CB164775AE009E019D /* PollBrain.m in Sources */,
+				D1FD2CC51650D0BC00020BCB /* Hasher.m in Sources */,
+				D1FD2CD31650D73300020BCB /* AESCrypt.m in Sources */,
+				D1FD2CD51650D73300020BCB /* NSData+Base64.m in Sources */,
+				D1FD2CD61650D73300020BCB /* NSData+CommonCrypto.m in Sources */,
+				D1FD2CD71650D73300020BCB /* NSString+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +355,11 @@
 			isa = PBXTargetDependency;
 			target = D13CA006162C93AE00A0FF0E /* PollQuestions */;
 			targetProxy = D13CA033162C93AE00A0FF0E /* PBXContainerItemProxy */;
+		};
+		D1FD2CDA1650D7BF00020BCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D13CA02D162C93AE00A0FF0E /* PollQuestionsTests */;
+			targetProxy = D1FD2CD91650D7BF00020BCB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
