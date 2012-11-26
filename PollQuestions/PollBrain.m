@@ -38,9 +38,10 @@
     
     //trying to encrypt the same things
     NSString *encryptResponse = [AESCrypt encrypt:response password:@"chicken butt"];
-    NSString *encryptQuesitonId = [AESCrypt encrypt:questionId password:@"chicken butt"];
+    NSString *encryptQuestionId = [AESCrypt encrypt:questionId password:@"chicken butt"];
     NSLog(@"Encrypted Response: %@", encryptResponse);
     NSLog(@"Decrypted Response: %@", [AESCrypt decrypt:encryptResponse password:@"chicken butt"]);
+    NSLog(@"Decrypted Response: %@", [AESCrypt decrypt:encryptQuestionId password:@"chicken butt"]);
     
     NSDictionary *responseDict = [NSDictionary dictionaryWithObjectsAndKeys:response, @"response",
                                   questionId, @"questionId", nil];

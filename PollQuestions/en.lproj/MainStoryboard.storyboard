@@ -24,14 +24,15 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVT-he-ve7">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="193" id="BFi-g1-WhC"/>
+                                    <constraint firstAttribute="width" constant="268" id="PMh-bI-EAF"/>
+                                    <constraint firstAttribute="height" constant="35" id="ks6-vq-ekf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Question from DB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbM-th-AJq">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="WQQ-Hp-xS1"/>
+                                    <constraint firstAttribute="width" constant="260" id="JuX-Dq-VQy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -39,6 +40,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vit-sm-6d8">
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="eQF-kk-m3D"/>
                                     <constraint firstAttribute="width" constant="211" id="qmM-Es-fjz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -53,27 +55,53 @@
                                     <action selector="submitResponse:" destination="2" eventType="touchUpInside" id="Mul-h4-Jgq"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UN4-IL-bEV">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Swipe to Submit!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcW-k3-XwD">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="137" id="Qgb-Tn-2te"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40392160420000001" green="0.88235300780000003" blue="0.054901964960000001" alpha="1" colorSpace="deviceRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="VcW-k3-XwD" firstAttribute="leading" secondItem="UN4-IL-bEV" secondAttribute="leading" constant="49" id="cVL-0n-9Kh"/>
+                                    <constraint firstItem="VcW-k3-XwD" firstAttribute="centerY" secondItem="UN4-IL-bEV" secondAttribute="centerY" type="default" id="khm-sE-r6x"/>
+                                    <constraint firstItem="VcW-k3-XwD" firstAttribute="top" secondItem="UN4-IL-bEV" secondAttribute="top" constant="3" id="onB-s4-JhY"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hEZ-t4-O66" appends="YES" id="m8g-UL-Z4E"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xbM-th-AJq" firstAttribute="top" secondItem="3" secondAttribute="top" constant="83" id="1lg-rb-SGP"/>
+                            <constraint firstItem="bVT-he-ve7" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="32j-Iq-LJA"/>
+                            <constraint firstItem="xbM-th-AJq" firstAttribute="centerX" secondItem="vit-sm-6d8" secondAttribute="centerX" type="default" id="4V5-4O-NTs"/>
+                            <constraint firstItem="bVT-he-ve7" firstAttribute="top" secondItem="3" secondAttribute="top" constant="132" id="4W8-tr-zlS"/>
                             <constraint firstItem="9iQ-PA-4m9" firstAttribute="leading" secondItem="xbM-th-AJq" secondAttribute="leading" type="default" id="7Gv-hd-OeR"/>
-                            <constraint firstAttribute="bottom" secondItem="vit-sm-6d8" secondAttribute="bottom" constant="64" id="W2L-qq-Hh8"/>
-                            <constraint firstItem="9iQ-PA-4m9" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="26" id="bpO-RL-OBZ"/>
-                            <constraint firstItem="bVT-he-ve7" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="iqK-Ue-ZAP"/>
+                            <constraint firstItem="vit-sm-6d8" firstAttribute="top" secondItem="3" secondAttribute="top" constant="184" id="JUm-Uf-2br"/>
+                            <constraint firstItem="UN4-IL-bEV" firstAttribute="leading" secondItem="vit-sm-6d8" secondAttribute="leading" type="default" id="W1N-MU-8Mw"/>
+                            <constraint firstItem="UN4-IL-bEV" firstAttribute="top" secondItem="3" secondAttribute="top" constant="230" id="aYS-tf-VNx"/>
+                            <constraint firstItem="vit-sm-6d8" firstAttribute="trailing" secondItem="UN4-IL-bEV" secondAttribute="trailing" type="default" id="ccD-gy-bYs"/>
                             <constraint firstItem="xbM-th-AJq" firstAttribute="leading" secondItem="bVT-he-ve7" secondAttribute="leading" type="default" id="kCL-Dh-591"/>
-                            <constraint firstItem="vit-sm-6d8" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="nmQ-S5-BjM"/>
-                            <constraint firstItem="bVT-he-ve7" firstAttribute="top" secondItem="3" secondAttribute="top" constant="132" id="rog-P1-ofu"/>
-                            <constraint firstItem="9iQ-PA-4m9" firstAttribute="top" secondItem="3" secondAttribute="top" constant="33" id="sxb-XU-URh"/>
+                            <constraint firstItem="9iQ-PA-4m9" firstAttribute="top" secondItem="3" secondAttribute="top" constant="33" type="user" id="sxb-XU-URh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="order" destination="9iQ-PA-4m9" id="CxV-fe-ooO"/>
                         <outlet property="question" destination="xbM-th-AJq" id="tSU-tE-zg1"/>
                         <outlet property="response" destination="bVT-he-ve7" id="UcL-V1-HHd"/>
+                        <outlet property="submitView" destination="UN4-IL-bEV" id="mpj-do-ea0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="hEZ-t4-O66"/>
             </objects>
             <point key="canvasLocation" x="-73" y="30"/>
         </scene>

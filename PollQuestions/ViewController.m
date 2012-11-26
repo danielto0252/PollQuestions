@@ -9,10 +9,11 @@
 #import "ViewController.h"
 #import "PollBrain.h"
 
-@interface ViewController ()
+@interface ViewController() <UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) PollBrain *brain; 
+@property (nonatomic, strong) PollBrain *brain;
 @property (nonatomic, strong) NSString *questionId;
+@property (weak, nonatomic) IBOutlet UIView *submitView;
 
 @end
 
@@ -23,6 +24,7 @@
 @synthesize response = _response;
 @synthesize brain = _brain;
 @synthesize questionId = _questionId;
+@synthesize submitView = _submitView;
 
 
 //if I don't have a question yet, allocate it memory so its not nil!
@@ -35,8 +37,13 @@
 
 - (void)viewDidLoad
 {
+  
     [super viewDidLoad];
 	
+    UISwipeGestureRecognizer *oneFingerSwipeRight = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeRight:)];
+    [oneFingerSwipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.submitView addGestureRecognizer:oneFingerSwipeRight];
+    
     //must set the response UITextView to self in order to dismiss
     self.response.delegate = self;
     
@@ -72,6 +79,12 @@
     [self.brain sendResponse:userResponse withQuestionId:questionId];
 }
 
+- (void)swipeRight:(UISwipeGestureRecognizer *)recognizer
+{
+    NSString *userResponse = self.response.text;
+    NSString *questionId = self.questionId;
+    [self.brain sendResponse:userResponse withQuestionId:questionId];
+}
 
 //method used to dismiss keyboard on return
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
