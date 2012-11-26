@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PollBrain : NSObject <NSURLConnectionDataDelegate>
+@interface PollBrain : NSObject 
 
 - (NSArray *) getParsedQuestions;
-- (void) sendResponse: (NSString *)response
+- (NSMutableURLRequest *) sendResponse: (NSString *)response
        withQuestionId: (NSString *)questionId;
 
 @end

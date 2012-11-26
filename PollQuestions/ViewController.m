@@ -9,11 +9,12 @@
 #import "ViewController.h"
 #import "PollBrain.h"
 
-@interface ViewController() <UIGestureRecognizerDelegate>
+@interface ViewController() <UIGestureRecognizerDelegate, NSURLConnectionDataDelegate>
 
 @property (nonatomic, strong) PollBrain *brain;
 @property (nonatomic, strong) NSString *questionId;
 @property (weak, nonatomic) IBOutlet UIView *submitView;
+@property (weak, nonatomic) IBOutlet UILabel *submitLabel;
 
 @end
 
@@ -25,6 +26,7 @@
 @synthesize brain = _brain;
 @synthesize questionId = _questionId;
 @synthesize submitView = _submitView;
+@synthesize submitLabel = _submitLabel;
 
 
 //if I don't have a question yet, allocate it memory so its not nil!
@@ -72,18 +74,15 @@
 
 }
 
-- (IBAction)submitResponse:(id)sender
-{
-    NSString *userResponse = self.response.text;
-    NSString *questionId = self.questionId;
-    [self.brain sendResponse:userResponse withQuestionId:questionId];
-}
-
 - (void)swipeRight:(UISwipeGestureRecognizer *)recognizer
 {
     NSString *userResponse = self.response.text;
     NSString *questionId = self.questionId;
-    [self.brain sendResponse:userResponse withQuestionId:questionId];
+    NSMutableURLRequest *postRequest = [self.brain sendResponse:userResponse withQuestionId:questionId];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
+    
+    [connection start];
 }
 
 //method used to dismiss keyboard on return
@@ -95,6 +94,31 @@
         return NO;
     }
     return YES;
+}
+
+
+//Must implement these for NSURLConnectionDataDelegate
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSLog(@"Data Sent: %@", data);
+}
+
+/*
+ if there is an error occured, this method will be called by connection
+ */
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"Error: %@" , error);
+}
+
+/*
+ if data is successfully received, this method will be called by connection
+ */
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"Data Received!");
+    self.submitLabel.text = @"Submitted!";
+    self.response.text = @"";
 }
 
 

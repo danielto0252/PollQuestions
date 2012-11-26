@@ -26,7 +26,7 @@
 }
 
 
-- (void)sendResponse:(NSString *)response withQuestionId:(NSString *)questionId
+- (NSMutableURLRequest *)sendResponse:(NSString *)response withQuestionId:(NSString *)questionId
 {
     //must send the response as a post to a url that will then update the response field in the database
     NSString *postURL = @"http://172.16.94.130/480-project/add-response.php";
@@ -59,30 +59,7 @@
     [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
     [postRequest setHTTPBody:responseJSONData];
 
-    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
-
-    [connection start];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    NSLog(@"Data Sent: %@", data);
-}
-
-/*
- if there is an error occured, this method will be called by connection
- */
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{    
-    NSLog(@"Error: %@" , error);
-}
-
-/*
- if data is successfully received, this method will be called by connection
- */
--(void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    NSLog(@"Data Received!");
+    return postRequest;
 }
 
 @end 
