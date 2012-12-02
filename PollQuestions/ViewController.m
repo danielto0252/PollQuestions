@@ -8,13 +8,15 @@
 
 #import "ViewController.h"
 #import "PollBrain.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 @interface ViewController() <UIGestureRecognizerDelegate, NSURLConnectionDataDelegate>
 
 @property (nonatomic, strong) PollBrain *brain;
 @property (nonatomic, strong) NSString *questionId;
-@property (weak, nonatomic) IBOutlet UIView *submitView;
-@property (weak, nonatomic) IBOutlet UILabel *submitLabel;
+@property (weak, nonatomic) IBOutlet UIButton *swipeToSubmitButton;
+
 
 @end
 
@@ -25,8 +27,7 @@
 @synthesize response = _response;
 @synthesize brain = _brain;
 @synthesize questionId = _questionId;
-@synthesize submitView = _submitView;
-@synthesize submitLabel = _submitLabel;
+@synthesize swipeToSubmitButton = _swipeToSubmitButton;
 
 
 //if I don't have a question yet, allocate it memory so its not nil!
@@ -41,10 +42,15 @@
 {
   
     [super viewDidLoad];
-	
+    
+    self.response.layer.cornerRadius = 8;
+    self.response.clipsToBounds = YES;
+    [self.response.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [self.response.layer setBorderWidth: 2.5];
+    
     UISwipeGestureRecognizer *oneFingerSwipeRight = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeRight:)];
     [oneFingerSwipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
-    [self.submitView addGestureRecognizer:oneFingerSwipeRight];
+    [self.swipeToSubmitButton addGestureRecognizer:oneFingerSwipeRight];
     
     //must set the response UITextView to self in order to dismiss
     self.response.delegate = self;
@@ -117,7 +123,7 @@
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSLog(@"Data Received!");
-    self.submitLabel.text = @"Submitted!";
+    [self.swipeToSubmitButton setImage:[UIImage imageNamed:@"submitted.png"] forState:UIControlStateNormal];
     self.response.text = @"";
 }
 

@@ -23,6 +23,10 @@
 		D13CA032162C93AE00A0FF0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13CA00D162C93AE00A0FF0E /* Foundation.framework */; };
 		D13CA03A162C93AE00A0FF0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D13CA038162C93AE00A0FF0E /* InfoPlist.strings */; };
 		D13CA03D162C93AE00A0FF0E /* PollQuestionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D13CA03C162C93AE00A0FF0E /* PollQuestionsTests.m */; };
+		D15CF2D5166AF879009CCE33 /* swipe2submit.png in Resources */ = {isa = PBXBuildFile; fileRef = D15CF2D3166AF879009CCE33 /* swipe2submit.png */; };
+		D15CF2D6166AF879009CCE33 /* swipe2submit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D15CF2D4166AF879009CCE33 /* swipe2submit@2x.png */; };
+		D15CF2D9166AFEC5009CCE33 /* submitted.png in Resources */ = {isa = PBXBuildFile; fileRef = D15CF2D7166AFEC5009CCE33 /* submitted.png */; };
+		D15CF2DA166AFEC5009CCE33 /* submitted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D15CF2D8166AFEC5009CCE33 /* submitted@2x.png */; };
 		D16E18CB164775AE009E019D /* PollBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = D16E18CA164775AE009E019D /* PollBrain.m */; };
 		D1FD2CC51650D0BC00020BCB /* Hasher.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FD2CC41650D0BC00020BCB /* Hasher.m */; };
 		D1FD2CD21650D73300020BCB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D1FD2CC71650D73300020BCB /* .gitignore */; };
@@ -74,6 +78,10 @@
 		D13CA039162C93AE00A0FF0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D13CA03B162C93AE00A0FF0E /* PollQuestionsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PollQuestionsTests.h; sourceTree = "<group>"; };
 		D13CA03C162C93AE00A0FF0E /* PollQuestionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PollQuestionsTests.m; sourceTree = "<group>"; };
+		D15CF2D3166AF879009CCE33 /* swipe2submit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe2submit.png; sourceTree = "<group>"; };
+		D15CF2D4166AF879009CCE33 /* swipe2submit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swipe2submit@2x.png"; sourceTree = "<group>"; };
+		D15CF2D7166AFEC5009CCE33 /* submitted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submitted.png; sourceTree = "<group>"; };
+		D15CF2D8166AFEC5009CCE33 /* submitted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "submitted@2x.png"; sourceTree = "<group>"; };
 		D16E18C9164775AE009E019D /* PollBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollBrain.h; sourceTree = "<group>"; };
 		D16E18CA164775AE009E019D /* PollBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollBrain.m; sourceTree = "<group>"; };
 		D1FD2CC31650D0BC00020BCB /* Hasher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hasher.h; sourceTree = "<group>"; };
@@ -168,6 +176,10 @@
 			children = (
 				D13CA013162C93AE00A0FF0E /* PollQuestions-Info.plist */,
 				D13CA014162C93AE00A0FF0E /* InfoPlist.strings */,
+				D15CF2D3166AF879009CCE33 /* swipe2submit.png */,
+				D15CF2D7166AFEC5009CCE33 /* submitted.png */,
+				D15CF2D8166AFEC5009CCE33 /* submitted@2x.png */,
+				D15CF2D4166AF879009CCE33 /* swipe2submit@2x.png */,
 				D13CA017162C93AE00A0FF0E /* main.m */,
 				D13CA019162C93AE00A0FF0E /* PollQuestions-Prefix.pch */,
 				D13CA01D162C93AE00A0FF0E /* Default.png */,
@@ -294,6 +306,10 @@
 				D1FD2CD21650D73300020BCB /* .gitignore in Resources */,
 				D1FD2CD41650D73300020BCB /* LICENSE in Resources */,
 				D1FD2CD81650D73300020BCB /* README.md in Resources */,
+				D15CF2D5166AF879009CCE33 /* swipe2submit.png in Resources */,
+				D15CF2D6166AF879009CCE33 /* swipe2submit@2x.png in Resources */,
+				D15CF2D9166AFEC5009CCE33 /* submitted.png in Resources */,
+				D15CF2DA166AFEC5009CCE33 /* submitted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
