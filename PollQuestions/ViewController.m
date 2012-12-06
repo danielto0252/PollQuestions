@@ -64,6 +64,7 @@
     
     self.order.text = [orderLabel stringByAppendingString:[question objectForKey:@"Question_num"]];;
     self.question.text = [question objectForKey:@"Question"];
+    [self.question sizeToFit];
     self.questionId = [question objectForKey:@"id"];
     
     //NSLog(@"%@", [question objectForKey:@"id"]);
