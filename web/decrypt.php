@@ -1,4 +1,6 @@
 <?php
+//Script does not work and breaks! :(
+
 //GVW2Zd3Z0oeZEhhh4SghtA==
 $crypted = "GVW2Zd3Z0oeZEhhh4SghtA==";
 $pass = "chicken butt";
